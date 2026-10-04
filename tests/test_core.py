@@ -12,9 +12,9 @@ class CoreTest(unittest.TestCase):
         self.assertEqual(core.count_lines("a\nb\n"), 2)
         self.assertEqual(core.count_lines(""), 0)
 
-    def test_top_words(self):
-        self.assertEqual(core.top_words("b a b c b a", 2), [("b", 3), ("a", 2)])
-        self.assertEqual(core.top_words("a b", 0), [])
+    def test_most_common_words(self):
+        self.assertEqual(core.most_common_words("b a b c b a", 2), [("b", 3), ("a", 2)])
+        self.assertEqual(core.most_common_words("a b", 0), [])
 
 
 if __name__ == "__main__":

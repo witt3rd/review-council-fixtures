@@ -23,6 +23,11 @@ def count_lines(text):
     return text.count("\n") + (0 if text.endswith("\n") else 1)
 
 
+def count_chars(text):
+    """How many characters `text` holds, newlines included."""
+    return len(text)
+
+
 def top_words(text, n):
     """The `n` most common words as (word, count) pairs, most common first."""
     if n <= 0:

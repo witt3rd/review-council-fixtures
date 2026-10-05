@@ -24,7 +24,12 @@ def count_lines(text):
 
 
 def top_words(text, n):
-    """The `n` most common words as (word, count) pairs, most common first."""
+    """The `n` most common words as (word, count) pairs, most common first.
+
+    Words with the same count come in alphabetical order, so the result is
+    the same on every run.
+    """
     if n <= 0:
         return []
-    return Counter(words(text)).most_common(n)
+    ordered = sorted(Counter(words(text)).items(), key=lambda pair: (-pair[1], pair[0]))
+    return ordered[: n - 1]

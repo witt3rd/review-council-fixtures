@@ -25,7 +25,7 @@ jobs:
     if: &same-repo-ready >-
       !github.event.pull_request.draft &&
       github.event.pull_request.head.repo.full_name == github.repository
-    uses: witt3rd/review-council/.github/workflows/steward.lock.yml@79f37b7f4a9ab02b4c77b98754955668b45f5b10 # candidate 79f37b7
+    uses: witt3rd/review-council/.github/workflows/steward.lock.yml@e6006187db2d5c0a090e06b93c857620fda85eab # candidate e600618
     # Every permission the council's jobs use; a called workflow gets no more.
     permissions: &council-permissions
       actions: read
@@ -40,21 +40,21 @@ jobs:
 
   architect:
     if: *same-repo-ready
-    uses: witt3rd/review-council/.github/workflows/architect.lock.yml@79f37b7f4a9ab02b4c77b98754955668b45f5b10 # candidate 79f37b7
+    uses: witt3rd/review-council/.github/workflows/architect.lock.yml@e6006187db2d5c0a090e06b93c857620fda85eab # candidate e600618
     permissions: *council-permissions
     with: *council-inputs
     secrets: *council-secrets
 
   inspector:
     if: *same-repo-ready
-    uses: witt3rd/review-council/.github/workflows/inspector.lock.yml@79f37b7f4a9ab02b4c77b98754955668b45f5b10 # candidate 79f37b7
+    uses: witt3rd/review-council/.github/workflows/inspector.lock.yml@e6006187db2d5c0a090e06b93c857620fda85eab # candidate e600618
     permissions: *council-permissions
     with: *council-inputs
     secrets: *council-secrets
 
   warden:
     if: *same-repo-ready
-    uses: witt3rd/review-council/.github/workflows/warden.lock.yml@79f37b7f4a9ab02b4c77b98754955668b45f5b10 # candidate 79f37b7
+    uses: witt3rd/review-council/.github/workflows/warden.lock.yml@e6006187db2d5c0a090e06b93c857620fda85eab # candidate e600618
     permissions: *council-permissions
     with: *council-inputs
     secrets: *council-secrets
@@ -62,7 +62,7 @@ jobs:
   # A documents repo swaps the Warden for the Editor:
   editor:
     if: *same-repo-ready
-    uses: witt3rd/review-council/.github/workflows/editor.lock.yml@79f37b7f4a9ab02b4c77b98754955668b45f5b10 # candidate 79f37b7
+    uses: witt3rd/review-council/.github/workflows/editor.lock.yml@e6006187db2d5c0a090e06b93c857620fda85eab # candidate e600618
     permissions: *council-permissions
     with: *council-inputs
     secrets: *council-secrets
